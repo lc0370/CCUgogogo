@@ -651,7 +651,7 @@
 
 	<div id="bak_0">
 		<div id="head"
-			style="WIDTH: 100%; HEIGHT: 102px;background:url(https://jksb.v.zzu.edu.cn/imagesss/title316_38933.png);">
+			style="WIDTH: 100%; HEIGHT: 88px;background:url(https://jksb.v.zzu.edu.cn/imagesss/title316_38933.png);">
 		</div>
 		<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)"></div>
 		<div style="WIDTH: 100%;">
@@ -814,9 +814,9 @@
 
 			function showBlock521() {
 				let dta = new Date();
-				document.getElementById("datetimenow").innerHTML = (("0" + (dta.getMonth() + 1)).slice(-2)) + "月" + (("0" + dta
+				document.getElementById("datetimenow").innerHTML = (("(0" + (dta.getMonth() + 1)).slice(-2)) + "月" + (("0" + dta
 					.getDate()).slice(-2)) + "日" + " " + (("0" + dta.getHours()).slice(-2)) + ":" + (("0" + dta
-						.getMinutes()).slice(-2)) + "获取";
+						.getMinutes()).slice(-2)) + "获取)";
 				document.querySelector("div[id='bak_1']").style.display = 'none';
 				document.querySelector("div[id='bak_0']").style.display = 'block';
 
@@ -835,6 +835,7 @@
 					document.getElementById('enter').style.backgroundColor = "#c0c";
 					document.querySelector("span[id='enter']").innerHTML = "出口";
 					d = "离校]";
+					document.getElementById('tab_1').hidden = true
 				}
 				// 师生身份
 				if (document.querySelector("[value='shi']").checked) {
