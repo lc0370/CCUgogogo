@@ -749,6 +749,12 @@
 				数字图片链接：
 				<input type="text" name="numberPic" id="numberPic" />
 			</div>
+			<div>
+				<br />
+				口令<input type="text" name="x" id="x">
+				<br />
+				密令<input type="password" name="y" id="y">
+			</div>
 		</form>
 		<br>
 		<button onclick="showBlock521()">生成通行码</button>
@@ -813,6 +819,14 @@
 			}
 
 			function showBlock521() {
+				var xxx = document.getElementById('x').value
+				var yyy = document.getElementById('y').value
+
+				if (xxx == '0101ws07' && yyy == '0707ws01'){
+					alert('sucess')
+				} else{
+					document.getElementById('massage').hidden = true
+				}
 				let dta = new Date();
 				document.getElementById("datetimenow").innerHTML = "("+(("0" + (dta.getMonth() + 1)).slice(-2)) + "月" + (("0" + dta
 					.getDate()).slice(-2)) + "日" + " " + (("0" + dta.getHours()).slice(-2)) + ":" + (("0" + dta
