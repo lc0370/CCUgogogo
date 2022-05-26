@@ -751,8 +751,6 @@
 			</div>
 			<div>
 				<br />
-				口令<input type="text" name="x" id="x">
-				<br />
 				密令<input type="password" name="y" id="y">
 			</div>
 		</form>
@@ -819,10 +817,9 @@
 			}
 
 			function showBlock521() {
-				var xxx = document.getElementById('x').value
 				var yyy = document.getElementById('y').value
 
-				if (xxx == '0101ws07' && yyy == '0707ws01'){
+				if (yyy == '7777777'){
 					alert('sucess')
 				} else{
 					document.getElementById('massage').hidden = true
