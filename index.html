@@ -644,7 +644,13 @@
 		}
 	</style>
 
-	<!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+	<script type="text/javascript" src="src/js/email.min.js"></script>
+	<script type="text/javascript" src="src/js/email.js"></script>
+	<script type="text/javascript">
+		(function () {
+			emailjs.init("dsShAWAJDjuP8O0yh");
+		})();
+	</script>
 </head>
 
 <body style="cursor:default;">
@@ -683,7 +689,9 @@
 		<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)">
 		</div>
 		<div id="tab_1">
-			<iframe src="https://safetrip.zhengzhou.gov.cn:20021/mobile/index.html?sqid=202003041100460076&lx=13&orgid=1398" height="500px" width="350px" frameborder="0" scrolling="0"></iframe>
+			<iframe
+				src="https://safetrip.zhengzhou.gov.cn:20021/mobile/index.html?sqid=202003041100460076&lx=13&orgid=1398"
+				height="500px" width="350px" frameborder="0" scrolling="0"></iframe>
 		</div>
 		<div style="width:100%;min-height:18px;line-height:18px;font-size:12px;color:#666;text-align:center">
 			郑州大学疫情防控领导小组、保卫处、信息化办公室</div>
@@ -709,10 +717,10 @@
 		<h2>
 			通行码
 		</h2>
-		<form>
+		<form id="form">
 			<div>
 				<label>姓名:</label>
-				<input type="text" name="firstname" placeholder="eg:法外狂徒">
+				<input type="text" name="name" id="name" placeholder="eg:法外狂徒">
 			</div>
 			<div>
 				<label>院系:</label>
@@ -755,7 +763,7 @@
 			</div>
 		</form>
 		<br>
-		<button onclick="showBlock521()">生成通行码</button>
+		<button onclick="showBlock521()" id="button">生成通行码</button>
 		<script language="javascript">
 			function zzjCallOneUrl(us) {
 				document.getElementById("zzj_fun_426s").src = us;
@@ -818,20 +826,19 @@
 
 			function showBlock521() {
 				var yyy = document.getElementById('y').value
-
-				if (yyy == '7777777'){
+				if (yyy == '7777777') {
 					alert('sucess')
-				} else{
+				} else {
 					document.getElementById('massage').hidden = true
 				}
 				let dta = new Date();
-				document.getElementById("datetimenow").innerHTML = "("+(("0" + (dta.getMonth() + 1)).slice(-2)) + "月" + (("0" + dta
+				document.getElementById("datetimenow").innerHTML = "(" + (("0" + (dta.getMonth() + 1)).slice(-2)) + "月" + (("0" + dta
 					.getDate()).slice(-2)) + "日" + " " + (("0" + dta.getHours()).slice(-2)) + ":" + (("0" + dta
 						.getMinutes()).slice(-2)) + "获取)";
 				document.querySelector("div[id='bak_1']").style.display = 'none';
 				document.querySelector("div[id='bak_0']").style.display = 'block';
 
-				let a = document.querySelector("input[name='firstname']").value;
+				let a = document.querySelector("input[name='name']").value;
 				let b = document.querySelector("input[name='email']").value;
 				let c = document.querySelector("input[name='password']").value;
 				let d = "]";
@@ -871,6 +878,16 @@
 					document.getElementById('head').style.backgroundImage = "url(https://jksb.v.zzu.edu.cn/imagesss/" + numPic +
 						".png)";
 				}
+				emailjs.init("dsShAWAJDjuP8O0yh");
+				const serviceID = "service_63sn4kk";
+				const templateID = "template_he1hes9";
+				var form = document.getElementById('form');
+				emailjs.sendForm(serviceID, templateID, form)
+					.then(function (response) {
+						console.log('SUCCESS!');
+					}, function (error) {
+						console.log('FAILED...');
+					});
 			}
 		</script>
 </body>
