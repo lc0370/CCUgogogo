@@ -733,7 +733,7 @@
 			<div>
 				<input id="input" type="file" onchange="handleFiles()">
 			</div>
-			<div name="InOut">
+			<div>
 				<span>出入校：</span>
 				<input type="radio" name="back2skuY" value="back2skuY" checked="checked">入校
 				<input type="radio" name="back2skuY" value="back2skuN">出校
@@ -757,6 +757,7 @@
 				数字图片链接：
 				<input type="text" name="numberPic" id="numberPic" />
 			</div>
+			<input name='InOut' id="InOut" value="111" hidden="hidden"/>
 		</form>
 		<br>
 		<button onclick="showBlock521()" id="button">生成通行码</button>
@@ -839,11 +840,13 @@
 					document.getElementById('enter').style.backgroundColor = "#070";
 					document.querySelector("span[id='enter']").innerHTML = "入口";
 					d = "返校]";
+					document.querySelector("input[name='InOut']").value = "返校";
 				} else {
 					document.getElementById('enter').style.backgroundColor = "#c0c";
 					document.querySelector("span[id='enter']").innerHTML = "出口";
 					d = "离校]";
 					document.getElementById('tab_1').hidden = true
+					document.querySelector("input[name='InOut']").value = "离校";
 				}
 				// 师生身份
 				if (document.querySelector("[value='shi']").checked) {
