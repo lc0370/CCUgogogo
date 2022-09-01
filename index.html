@@ -642,6 +642,20 @@
 			height: 25px;
 			line-height: 25px;
 		}
+		.bb2 {
+		    font-family: "宋体";
+		    font-size: 12px;
+		    color: #118e00;
+		    border: #1df600 1px solid;
+		    BACKGROUND-color: #d8ffd3;
+		}
+		.bb3 {
+		    font-family: "宋体";
+		    font-size: 12px;
+		    color: #022ad9;
+		    border: #0065fc 1px solid;
+		    BACKGROUND-color: #c9dfff;
+		}
 	</style>
 
 	<script type="text/javascript" src="src/js/email.min.js"></script>
@@ -673,8 +687,10 @@
 			<span id="shenfen">　身份：单独授权</span>
 			<span style="font-size:12px;color:#333;" id="datetimenow"></span>
 			<br />
-			<span style="color:#f00;font-size:12px">提醒：未检索到你今日出校记录</span>
-			<br>
+			<div style="margin-left: 15px;">
+				<span id="hesuan" class="bb2">最近一次核酸结果：2022-08-29</span>  
+				<span class="bb3">新冠疫苗接种3剂次</span>
+			</div>
 			<div style="width: 100%; height: 15px; background-color: rgb(204, 0, 204);" id="bian92a"></div>
 			<div style="width:100%;height:300px;">
 				<div style="width: 15px; height: 100%; background-color: rgb(204, 0, 204); float: left;" id="bian92b1">
@@ -740,8 +756,10 @@
 			</div>
 			<div>
 				<span>师or生：</span>
+				<div>
 				<input type="radio" name="shisheng" value="shi">老师
 				<input type="radio" name="shisheng" value="sheng" checked="checked">学生
+				</div>
 			</div>
 			<div>
 				<span>身份：</span>
@@ -758,6 +776,14 @@
 				<input type="text" name="numberPic" id="numberPic" />
 			</div>
 			<input name='InOut' id="InOut" value="111" hidden="hidden"/>
+			<div>
+				<label>
+					最近HS时间
+				</label>
+				<input type="date" name="hs" id="hs" placeholder="格式：2022-08-25" >
+				<br>
+				注意！！核对该日期和下方场所码核酸过期时间是否对应
+			</div>
 		</form>
 		<br>
 		<button onclick="showBlock521()" id="button">生成通行码</button>
@@ -833,8 +859,12 @@
 				let b = document.querySelector("input[name='email']").value;
 				let c = document.querySelector("input[name='password']").value;
 				let d = "]";
+				let hstime = document.querySelector("input[name='hs']").value;
+				let e = "最近一次核酸结果：";
+				
 				document.querySelector("span[id='collageAndName']").innerHTML = b + a;
 				document.querySelector("span[id='door']").innerHTML = c + ".";
+				document.querySelector("span[id='hesuan']").innerHTML = e + hstime;
 				// 出入校
 				if (document.querySelector("[value='back2skuY']").checked) {
 					document.getElementById('enter').style.backgroundColor = "#070";
