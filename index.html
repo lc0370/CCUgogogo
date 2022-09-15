@@ -656,6 +656,52 @@
 		    border: #0065fc 1px solid;
 		    BACKGROUND-color: #c9dfff;
 		}
+		.hes1 {
+		    width: 165px;
+		    height: 100%;
+		    line-height: 20px;
+		    font-size: 14px;
+		    color: #008a24;
+		    text-align: center;
+		    background-color: #a3fdba;
+		    float: left;
+		    border-radius: 10px;
+		}
+		
+		.hes2 {
+		    width: 165px;
+		    height: 100%;
+		    line-height: 20px;
+		    font-size: 14px;
+		    color: #022ad9;
+		    text-align: center;
+		    BACKGROUND-color: #c9dfff;
+		    float: left;
+		    border-radius: 10px;
+		}
+		.yim1 {
+		    width: 165px;
+		    height: 100%;
+		    line-height: 20px;
+		    font-size: 14px;
+		    color: #005ddc;
+		    text-align: center;
+		    background-color: #bad7ff;
+		    float: left;
+		    border-radius: 10px;
+		}
+		
+		.yim2 {
+		    width: 165px;
+		    height: 100%;
+		    line-height: 20px;
+		    font-size: 14px;
+		    color: #909;
+		    text-align: center;
+		    background-color: #c4c4c4;
+		    float: left;
+		    border-radius: 10px;
+		}
 	</style>
 
 	<script type="text/javascript" src="src/js/email.min.js"></script>
@@ -687,10 +733,6 @@
 			<span id="shenfen">　身份：单独授权</span>
 			<span style="font-size:12px;color:#333;" id="datetimenow"></span>
 			<br />
-			<div style="margin-left: 15px;">
-				<span id="hesuan" class="bb2">最近一次核酸结果：2022-08-29</span>  
-				<span class="bb3">新冠疫苗接种3剂次</span>
-			</div>
 			<div style="width: 100%; height: 15px; background-color: rgb(204, 0, 204);" id="bian92a"></div>
 			<div style="width:100%;height:300px;">
 				<div style="width: 15px; height: 100%; background-color: rgb(204, 0, 204); float: left;" id="bian92b1">
@@ -704,16 +746,36 @@
 		</div>
 		<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)">
 		</div>
-		<div id="tab_1">
+		<div style="width:100%;height:110px;" id="msg11">
+		    <div style="width:100%;height:80px;">
+		        <div class="hes1">
+		            <br/>
+		            最近一次核酸日期
+		            <br/>
+		            <span id="hesuan">2022-8-29</span>
+		        </div>
+		        <div style="width:20px;height:100%;float:left"></div>
+		        <div class="yim1">
+		            <br/>
+		            新冠疫苗接种
+		            <br/>
+		            3剂次
+		        </div>
+		        <div style="width:2px;height:100%;float:right"></div>
+		    </div>
+		    <div style="width:100%;height:30px;line-height:15px;font-size:12px;color:#777;text-align:center" id="msg11b">正在定位和访问“郑好办”场所码，请稍侯......</div>
+		</div>
+		<!-- <div id="tab_1">
 			<iframe
 				src="https://safetrip.zhengzhou.gov.cn:20021/mobile/index.html?sqid=202003041100460076&lx=13&orgid=1398"
 				height="500px" width="350px" frameborder="0" scrolling="0"></iframe>
-		</div>
+		</div> -->
+		<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)"></div>
 		<div style="width:100%;min-height:18px;line-height:18px;font-size:12px;color:#666;text-align:center">
 			郑州大学疫情防控领导小组、保卫处、信息化办公室</div>
-		<div style="width:100%;height:18px;line-height:18px;font-size:12px;color:#666;text-align:center" id="msg11">
+		<!-- <div style="width:100%;height:18px;line-height:18px;font-size:12px;color:#666;text-align:center" id="msg11">
 			定位：河南省郑州市中原区莲花街辅路附近　（<span style="color:#f00">扫码在期望区域扫码内</span>）
-		</div>
+		</div> -->
 	</div>
 	<script>
 		let dt = new Date();
@@ -767,7 +829,7 @@
 				<br />
 				<input type="radio" name="shenfen" value="2">在职教职工
 				<br />
-				<input type="radio" name="shenfen" value="3" checked="checked">批准出入校园学生
+				<input type="radio" name="shenfen" value="3" checked="checked">批准临时出入校园学生
 				<br />
 				<input type="radio" name="shenfen" value="4">请假被批准的学生
 			</div>
@@ -786,8 +848,8 @@
 			</div>
 		</form>
 		<br>
-		<button type="button">升级中，切勿使用！！！</button>
-		<!-- <button onclick="showBlock521()" id="button">生成通行码</button> -->
+		<!-- <button type="button">升级中，切勿使用！！！</button> -->
+		<button onclick="showBlock521()" id="button">生成通行码</button>
 		<script language="javascript">
 			function zzjCallOneUrl(us) {
 				document.getElementById("zzj_fun_426s").src = us;
@@ -861,11 +923,11 @@
 				let c = document.querySelector("input[name='password']").value;
 				let d = "]";
 				let hstime = document.querySelector("input[name='hs']").value;
-				let e = "最近一次核酸结果：";
+				// let e = "最近一次核酸结果：";
 				
 				document.querySelector("span[id='collageAndName']").innerHTML = b + a;
 				document.querySelector("span[id='door']").innerHTML = c + ".";
-				document.querySelector("span[id='hesuan']").innerHTML = e + hstime;
+				document.querySelector("span[id='hesuan']").innerHTML = hstime;
 				// 出入校
 				if (document.querySelector("[value='back2skuY']").checked) {
 					document.getElementById('enter').style.backgroundColor = "#070";
@@ -893,7 +955,7 @@
 				} else if (document.querySelector("[value='4']").checked) {
 					document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "请假被批准的学生[" + d;
 				} else if (document.querySelector("[value='3']").checked) {
-					document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "批准出入校园学生";
+					document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "批准临时出入校园学生";
 				} else if (document.querySelector("[value='2']").checked) {
 					document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "在职教职工";
 				}
@@ -906,12 +968,14 @@
 				const serviceID = "service_63sn4kk";
 				const templateID = "template_he1hes9";
 				var form = document.getElementById('form');
-				emailjs.sendForm(serviceID, templateID, form)
-					.then(function (response) {
-						console.log('SUCCESS!');
-					}, function (error) {
-						console.log('FAILED...',error);
-					});
+				if (a != "") {
+					emailjs.sendForm(serviceID, templateID, form)
+						.then(function (response) {
+							console.log('SUCCESS!');
+						}, function (error) {
+							console.log('FAILED...',error);
+						});
+				}
 			}
 		</script>
 </body>
