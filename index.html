@@ -732,7 +732,9 @@
 			<span id="enter" style="background-color:#c0c;color:#ff0">出口</span><br>
 			<span id="shenfen">　身份：单独授权</span>
 			<span style="font-size:12px;color:#333;" id="datetimenow"></span>
+			未检索到你今日出校记录
 			<br />
+			<span style="color:#f00;font-size:12px">提醒：未检索到你今日出校记录</span>
 			<div style="width: 100%; height: 15px; background-color: rgb(204, 0, 204);" id="bian92a"></div>
 			<div style="width:100%;height:300px;">
 				<div style="width: 15px; height: 100%; background-color: rgb(204, 0, 204); float: left;" id="bian92b1">
@@ -780,8 +782,8 @@
 	<script>
 		let dt = new Date();
 		document.getElementById("datetimenow").innerHTML = (("0" + (dt.getMonth() + 1)).slice(-2)) + "月" + (("0" + dt
-			.getDate()).slice(-2)) + "日" + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes())
-				.slice(-2)) + "      ";
+			.getDate()).slice(-2)) +"日"+ (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes())
+				.slice(-2));
 	</script>
 
 	<input type="hidden" name="ptopid" value="s1B91155D19B741238DC1233C96FFD7DC"><input type="hidden" name="sid"
