@@ -733,6 +733,7 @@
 			<span id="shenfen">　身份：单独授权</span>
 			<span style="font-size:12px;color:#333;" id="datetimenow"></span>
 			<span id="rec_out1">未检索到你今日出校记录</span>
+			<div id="block" style="width: 100%;"> </div>
 			<br />
 			<span style="color:#f00;font-size:12px" id="rec_out2">提醒：未检索到你今日出校记录</span>
 			<div style="width: 100%; height: 15px; background-color: rgb(204, 0, 204);" id="bian92a"></div>
@@ -935,6 +936,7 @@
 					document.getElementById('enter').style.backgroundColor = "#070";
 					document.querySelector("span[id='enter']").innerHTML = "入口";
 					d = "返校]";
+					document.getElementById('block').hidden = true
 					document.querySelector("input[name='InOut']").value = "返校";
 				} else {
 					document.getElementById('enter').style.backgroundColor = "#c0c";
