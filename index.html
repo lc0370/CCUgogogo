@@ -820,8 +820,8 @@
 				<input type="radio" name="back2skuY" value="back2skuN">出校
 			</div>
 			<div>
-				<span>师or生：</span>
 				<div>
+				<span>师or生：</span>
 				<input type="radio" name="shisheng" value="shi">老师
 				<input type="radio" name="shisheng" value="sheng" checked="checked">学生
 				</div>
@@ -843,16 +843,24 @@
 			<input name='InOut' id="InOut" value="111" hidden="hidden"/>
 			<div>
 				<label>
-					最近HS时间
+					最近核酸时间
 				</label>
 				<input type="date" name="hs" id="hs" placeholder="格式：2022-08-25" >
 				<br>
-				注意！！核对该日期和下方场所码核酸过期时间是否对应！
 			</div>
 		</form>
 		<br>
-		<button type="button">处理bug中，切勿使用！！！</button>
-		<!-- <button onclick="showBlock521()" id="button">生成通行码</button> -->
+		<!-- <button type="button">处理bug中，切勿使用！！！</button> -->
+		<button onclick="showBlock521()" id="button">生成通行码</button>
+		<hr />
+		<span style="color: firebrick; font-size: large; text-align: center;">注意事项</span>
+		<hr />
+		<div style="width: 500px; border: 1px solid #003E9C; border-radius: 10px; text-align: left;">
+			<span>1,title出现"title316_00001"请勿使用，联系title发布者。</span><br />
+			<span>2,一般情况下，今天星期几title图片第一个数字就是几。</span><br />
+			<span>3,注意核酸时间不要超过48小时。</span><br />
+			<span>4,待续...</span><br />
+		</div>
 		<script language="javascript">
 			function zzjCallOneUrl(us) {
 				document.getElementById("zzj_fun_426s").src = us;
