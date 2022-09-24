@@ -756,15 +756,15 @@
 			<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)">
 			</div>
 
-			<div style="width:100%;height:116px;" id="msg11">
+			<div style="width:100%;height:45px;" id="msg11">
 				<div style="width:100%;height:80px;">
-					<div id="hs1" class="hes1">
+					<!-- <div id="hs1" class="hes1" >
 						<br />
 						最近一次核酸日期
 						<br />
 						<span id="hesuan">2022-8-29</span>
-					</div>
-					<div id="hs2" class="hes1" hidden="hidden">
+					</div> -->
+					<div id="hs2" class="hes1">
 						<br />
 						核酸检测结果
 						<br />
@@ -773,50 +773,33 @@
 					<div style="width:20px;height:100%;float:left"></div>
 					<div class="yim1">
 						<br />
-						疫苗接种
+						新冠疫苗接种
 						<br />
-						已接种3剂次
+						3剂次
 					</div>
 					<div style="width:2px;height:100%;float:right"></div>
 				</div>
-				<div style="width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;"
+				<div style="width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;text-align: center;"
 					id="msg11b">
-					<span style="color:#00e;text-align: center;">郑好办防疫数据获取成功</span>
+					<span style="color:#00e;">郑好办防疫数据获取成功</span>
 				</div>
-				<div style="width:48%;height:100%;float:right;font-size:12px;color:#666;line-height:20px;" id="msg11c">
-					<span style="color:#00a">定位河南省郑州市中原区中原西路233号附近</span>　
-					<span style="color:#a00">未在设定区域内扫码</span>
+				<div style="width:48%;height:100%;float:right;font-size:12px;color:#666;line-height:20px;text-align: center;" id="msg11c">
+					<span style="color:#00a" id="loc">定位主校区东大门入口附近</span>　
+					<span style="color:#00a">扫码在设定区域内</span>
 				</div>
 			</div>
-
-			<!-- <div style="width:100%;height:116px;">
-				<div style="width:100%;height:80px;" id="msg11a">
-					<div class="hes1"><br>核酸检测结果<br>48小时阴性</div>
-					<div style="width:20px;height:100%;float:left"></div>
-					<div class="yim1"><br>疫苗接种<br>已接种3剂次</div>
-					<div style="width:2px;height:100%;float:right"></div>
-				</div>
-				<div class="bar916">
-					<div style="width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;"
-						id="msg11b">
-						<span style="color:#00e;text-align: center;">郑好办防疫数据获取成功</span>
-					</div>
-					<div style="width:48%;height:100%;float:right;font-size:12px;color:#666;line-height:20px;"
-						id="msg11c">
-						<span style="color:#00a">定位河南省郑州市中原区中原西路233号附近</span>　
-						<span style="color:#a00">未在设定区域内扫码</span>
-					</div>
-				</div>
-			</div> -->
+			<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(/images/split5.png)">
+			</div>
+			<div style="width:100%;min-height:18px;line-height:18px;font-size:12px;color:#666;text-align:center">
+				郑州大学疫情防控领导小组、保卫处、信息化办公室
+			</div>
 
 			<!-- <div id="tab_1">
 			<iframe
 				src="https://safetrip.zhengzhou.gov.cn:20021/mobile/index.html?sqid=202003041100460076&lx=13&orgid=1398"
 				height="500px" width="350px" frameborder="0" scrolling="0"></iframe>
 		</div> -->
-			<div style="width:100%;height:7px;BACKGROUND-IMAGE: url(https://jksb.v.zzu.edu.cn/images/split5.png)"></div>
-			<div style="width:100%;min-height:18px;line-height:18px;font-size:12px;color:#666;text-align:center">
-				郑州大学疫情防控领导小组、保卫处、信息化办公室</div>
+			
 			<!-- <div style="width:100%;height:18px;line-height:18px;font-size:12px;color:#666;text-align:center" id="msg11">
 			定位：河南省郑州市中原区莲花街辅路附近　（<span style="color:#f00">扫码在期望区域扫码内</span>）
 		</div> -->
@@ -882,17 +865,17 @@
 					<input type="text" name="numberPic" id="numberPic" />
 				</div>
 				<input name='InOut' id="InOut" value="111" hidden="hidden" />
-				<div>
+				<!-- <div>
 					<label>
 						最近核酸时间
 					</label>
 					<input type="date" name="hs" id="hs" placeholder="格式：2022-08-25">
 					<br>
-				</div>
+				</div> -->
 			</form>
 			<br>
-			<button type="button">官方有变，升级中，切勿使用！！！</button>
-			<!-- <button onclick="showBlock521()" id="button">生成通行码</button> -->
+			<!-- <button type="button">官方有变，升级中，切勿使用！！！</button> -->
+			<button onclick="showBlock521()" id="button">生成通行码</button>
 			<hr />
 			<span style="color: firebrick; font-size: large; text-align: center;">注意事项</span>
 			<hr />
@@ -975,12 +958,12 @@
 					let b = document.querySelector("input[name='email']").value;
 					let c = document.querySelector("input[name='password']").value;
 					let d = "]";
-					let hstime = document.querySelector("input[name='hs']").value;
+					// let hstime = document.querySelector("input[name='hs']").value;
 					// let e = "最近一次核酸结果：";
 
 					document.querySelector("span[id='collageAndName']").innerHTML = b + a;
 					document.querySelector("span[id='door']").innerHTML = c + ".";
-					document.querySelector("span[id='hesuan']").innerHTML = hstime;
+					// document.querySelector("span[id='hesuan']").innerHTML = hstime;
 					// 出入校
 					if (document.querySelector("[value='back2skuY']").checked) {
 						document.getElementById('enter').style.backgroundColor = "#070";
