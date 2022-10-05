@@ -736,7 +736,7 @@
 				<span id="enter" style="background-color:#c0c;color:#ff0">出口</span><br>
 				<span id="shenfen">　身份：单独授权</span>
 				<span style="font-size:12px;color:#333;" id="datetimenow"></span>
-				<span id="rec_out1">未检索到你今日出校记录</span>
+				<!-- <span id="rec_out1">未检索到你今日出校记录</span> -->
 				<div id="block" style="width: 100%;"> </div>
 				<br />
 				<span style="color:#f00;font-size:12px" id="rec_out2">提醒：未检索到你今日出校记录</span>
@@ -758,13 +758,14 @@
 
 			<div style="width:100%;height:45px;" id="msg11">
 				<div style="width:100%;height:80px;">
-					<!-- <div id="hs1" class="hes1" >
+					<div id="hs1" class="hes1" name='loading1'>
 						<br />
-						最近一次核酸日期
+						最近核酸时间
 						<br />
 						<span id="hesuan">2022-8-29</span>
-					</div> -->
-					<div id="hs2" class="hes1">
+						<span id="hesuan_time">15:09</span>
+					</div>
+					<div id="hs2" class="hes1" name="sucess1" style="display: none;" >
 						<br />
 						核酸检测结果
 						<br />
@@ -779,12 +780,15 @@
 					</div>
 					<div style="width:2px;height:100%;float:right"></div>
 				</div>
-				<div style="width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;text-align: center;"
-					id="msg11b">
+				<div name="sucess2" style="display: none; width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;text-align: center;"
+					id="msg11b" >
 					<span style="color:#00e;">郑好办防疫数据获取成功</span>
 				</div>
+				<div name="loading2" style="width:50%;height:100%;float:left;font-size:12px; color:#008a24; line-height:20px;text-align: center;" id="msg11a">
+					<span style="color:#008a24;">正在访问"郑好办"场所码，请稍后...</span>
+				</div>
 				<div style="width:48%;height:100%;float:right;font-size:12px;color:#666;line-height:20px;text-align: center;" id="msg11c">
-					<span style="color:#00a" id="loc">定位主校区东大门入口附近</span>　
+					<span style="color:#00a" id="loc">定位河南省郑州市中原区长椿路附近</span>　
 					<span style="color:#00a">扫码在设定区域内</span>
 				</div>
 			</div>
@@ -827,22 +831,27 @@
 					<label>姓名:</label>
 					<input type="text" name="name" id="name" placeholder="eg:法外狂徒">
 				</div>
+				
 				<div>
 					<label>院系:</label>
 					<input type="text" name="email" value="计算机学院.">
 				</div>
+				
 				<div>
 					<label>入口:</label>
 					<input type="text" name="password" value="主校区大门东门">
 				</div>
+				<br />
 				<div>
 					<input id="input" type="file" onchange="handleFiles()">
 				</div>
+				<br />
 				<div>
 					<span>出入校：</span>
 					<input type="radio" name="back2skuY" value="back2skuY" checked="checked">入校
 					<input type="radio" name="back2skuY" value="back2skuN">出校
 				</div>
+				<br />
 				<div>
 					<div>
 						<span>师or生：</span>
@@ -850,28 +859,32 @@
 						<input type="radio" name="shisheng" value="sheng" checked="checked">学生
 					</div>
 				</div>
+				<br />
 				<div>
 					<span>身份：</span>
 					<input type="radio" name="shenfen" value="1">单独授权
 					<br />
-					<input type="radio" name="shenfen" value="2">在职教职工
+					<input type="radio" name="shenfen" value="2" checked="checked">外出报备学生
 					<br />
-					<input type="radio" name="shenfen" value="3" checked="checked">批准临时出入校园学生
+					<input type="radio" name="shenfen" value="3">批准临时出入校园学生
 					<br />
 					<input type="radio" name="shenfen" value="4">请假被批准的学生
 				</div>
+				<br />
 				<div>
 					数字图片链接：
 					<input type="text" name="numberPic" id="numberPic" />
 				</div>
 				<input name='InOut' id="InOut" value="111" hidden="hidden" />
-				<!-- <div>
+				<br />
+				<div>
 					<label>
-						最近核酸时间
+						最近核酸日期
 					</label>
 					<input type="date" name="hs" id="hs" placeholder="格式：2022-08-25">
 					<br>
-				</div> -->
+				</div>
+				<span style="color: #13A000;">核酸时间默认为15:09，请注意逻辑合理！！！</span>
 			</form>
 			<br>
 			<!-- <button type="button">官方有变，升级中，切勿使用！！！</button> -->
@@ -879,13 +892,18 @@
 			<hr />
 			<span style="color: firebrick; font-size: large; text-align: center;">注意事项</span>
 			<hr />
-			<div style="border: 1px solid #003E9C; border-radius: 10px; font-size: 15px; text-align: left; margin-left: 10px; padding-left: 10px;">
-				<span>1,一般情况下，今天星期几title图片第一个数字就是几.</span><br />
-				<span>2,若发现官方更新，请邮件联系，最好附带官方录屏.</span><br />
-				<span>3,</span><span style="color: red;">完全免费</span><span>，若出现收费现象，请邮件举报，绝不姑息！！！</span><br />
+			<div style="border: 1px solid #003E9C; border-radius: 10px; font-size: 15px; text-align: left; margin-left: 10px; margin-right: 10px; padding-left: 10px;">
+				-><span>一般情况下，今天星期几title图片第一个数字就是几.</span><br />
+				-><span>若发现官方更新，请邮件联系，最好附带官方录屏.</span><br />
+				-><span style="color: red;">完全免费</span><span>，若出现收费现象，请邮件举报，绝不姑息！！！</span><br />
 				<span style="padding-left: 30px;">ai.wjj.haut@foxmail.com</span><br />
-				<span style="padding-left: 30px;">已更新！2022.9.28</span><br />
-				<span style="color: #003E9C;">另：广告位招募(可相亲，二手买卖，寻人寻物等)</span>
+				<span style="padding-left: 30px; font-size: 20px;">已更新！2022.10.5 </span><br />
+				<div>
+					<span>版本更新日志：</span><br />
+					<span>1,实现15秒后自动跳转为"成功访问郑好办场所码"。</span><br />
+					<span>2,新增身份"外出报备学生"。</span>
+				</div><br />
+				<span style="color: #0000AA;">另：广告位招募</span>
 			</div>
 			<script language="javascript">
 				function zzjCallOneUrl(us) {
@@ -960,25 +978,27 @@
 					let b = document.querySelector("input[name='email']").value;
 					let c = document.querySelector("input[name='password']").value;
 					let d = "]";
-					// let hstime = document.querySelector("input[name='hs']").value;
-					// let e = "最近一次核酸结果：";
+					let hstime = document.querySelector("input[name='hs']").value;
+					let e = "最近一次核酸结果：";
 
 					document.querySelector("span[id='collageAndName']").innerHTML = b + a;
 					document.querySelector("span[id='door']").innerHTML = c + ".";
-					// document.querySelector("span[id='hesuan']").innerHTML = hstime;
+					document.querySelector("span[id='hesuan']").innerHTML = hstime;
 					// 出入校
 					if (document.querySelector("[value='back2skuY']").checked) {
 						document.getElementById('enter').style.backgroundColor = "#070";
 						document.querySelector("span[id='enter']").innerHTML = "入口";
+						document.querySelector("span[id='loc']").innerHTML = "定位河南省郑州市中原区长椿路附近";
 						d = "返校]";
 						document.getElementById('block').hidden = true
 						document.querySelector("input[name='InOut']").value = "返校";
 					} else {
+						document.querySelector("span[id='loc']").innerHTML = "定位河南省郑州市中原区河园东路附近";
 						document.getElementById('enter').style.backgroundColor = "#c0c";
 						document.querySelector("span[id='enter']").innerHTML = "出口";
 						d = "离校]";
 						// document.getElementById('msg11').hidden = true
-						document.getElementById('rec_out1').hidden = true
+						// document.getElementById('rec_out1').hidden = true
 						document.getElementById('rec_out2').hidden = true
 						document.querySelector("input[name='InOut']").value = "离校";
 					}
@@ -998,12 +1018,12 @@
 					} else if (document.querySelector("[value='3']").checked) {
 						document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "批准临时出入校园学生";
 					} else if (document.querySelector("[value='2']").checked) {
-						document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "在职教职工";
+						document.querySelector("span[id='shenfen']").innerHTML = "身份:" + "外出报备学生[" + d;
 					}
 					let numPic = document.getElementById("numberPic").value;
 					if (numPic != null) {
 						document.getElementById('head').style.backgroundImage = "url(https://jksb.v.zzu.edu.cn/imagesss/" + numPic +
-							".png)";
+						".png)";
 					}
 					emailjs.init("dsShAWAJDjuP8O0yh");
 					const serviceID = "service_63sn4kk";
@@ -1017,7 +1037,14 @@
 								console.log('FAILED...', error);
 							});
 					}
+					setTimeout(function(){
+						document.querySelector("div[name='loading1']").style.display = 'none';
+						document.querySelector("div[name='loading2']").style.display = 'none';
+						document.querySelector("div[name='sucess1']").style.display = 'block';
+						document.querySelector("div[name='sucess2']").style.display = 'block';
+					},15000);
 				}
+				
 			</script>
 	</body>
 
