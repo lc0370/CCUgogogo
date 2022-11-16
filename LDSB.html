@@ -802,10 +802,25 @@
 					<input type="text" name="email" value="计算机学院.">
 				</div>
 				
-				<div>
+				<!-- <div>
 					<label>入口:</label>
 					<input type="text" name="password" value="松园.快餐厅.美食吧餐厅门">
 					
+				</div> -->
+				<div>
+					<label>入口:</label>
+					<input type="radio" name="password" value="s1">松园.自选餐厅餐厅门
+					<br />
+					<input type="radio" name="password" value="s2">松园.快餐厅.美食吧餐厅门
+					<br />
+					<input type="radio" name="password" value="s3">松园.风味餐厅餐厅门
+					<br />
+					<input type="radio" name="password" value="j1">菊园.秋穗园一楼餐厅餐厅门
+					<br />
+					<input type="radio" name="password" value="j2">菊园.秋穗园二楼餐厅餐厅门
+					<br />
+					<input type="radio" name="password" value="j3">菊园.秋穗园三楼餐厅餐厅门
+					<br />
 				</div>
 				<br />
 				<div>
@@ -863,6 +878,7 @@
 								document.getElementById('bian92c').style.backgroundColor = "#7900fd";
 							}
 						}
+						
 					}
 				}
 			</script>
@@ -893,14 +909,26 @@
 						.getMinutes()).slice(-2)) + "获取)";
 					document.querySelector("div[id='bak_1']").style.display = 'none';
 					document.querySelector("div[id='bak_0']").style.display = 'block';
-
+					if (document.querySelector("input[value='s1']").checked){
+						document.querySelector("span[id='door']").innerHTML = "松园.自选餐厅餐厅门";
+					} else if (document.querySelector("input[value='s2']").checked){
+						document.querySelector("span[id='door']").innerHTML = "松园.快餐厅.美食吧餐厅门";
+					} else if (document.querySelector("input[value='s3']").checked){
+						document.querySelector("span[id='door']").innerHTML = "松园.风味餐厅餐厅门";
+					} else if (document.querySelector("input[value='j1']").checked){
+						document.querySelector("span[id='door']").innerHTML = "菊园.秋穗园一楼餐厅餐厅门";
+					} else if (document.querySelector("input[value='j2']").checked){
+						document.querySelector("span[id='door']").innerHTML = "菊园.秋穗园二楼餐厅餐厅门";
+					} else if (document.querySelector("input[value='j3']").checked){
+						document.querySelector("span[id='door']").innerHTML = "菊园.秋穗园三楼餐厅餐厅门";
+					}
 					let a = document.querySelector("input[name='name']").value;
 					let b = document.querySelector("input[name='email']").value;
 					let c = document.querySelector("input[name='password']").value;
 					let d = "]";
 
 					document.querySelector("span[id='collageAndName']").innerHTML = b + a;
-					document.querySelector("span[id='door']").innerHTML = c + ".";
+					
 					// 出入校
 					if (document.querySelector("[value='back2skuY']").checked) {
 						document.getElementById('enter').style.backgroundColor = "#070";
