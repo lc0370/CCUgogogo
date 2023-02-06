@@ -760,16 +760,15 @@
 				<div style="width:100%;height:80px;">
 					<div id="hs1" class="hes1" name='loading1'>
 						<br />
-						最近核酸时间
+						不再检测核酸时间
 						<br />
-						<span id="hesuan">2022-8-29</span>
-						<span id="hesuan_time">15:09</span>
+						
 					</div>
 					<div id="hs2" class="hes1" name="sucess1" style="display: none;" >
 						<br />
-						核酸检测结果
+						
 						<br />
-						48小时阴性
+						
 					</div>
 					<div style="width:20px;height:100%;float:left"></div>
 					<div class="yim1">
@@ -782,10 +781,10 @@
 				</div>
 				<div name="sucess2" style="display: none; width:50%;height:100%;float:left;font-size:12px;color:#666;line-height:20px;text-align: center;"
 					id="msg11b" >
-					<span style="color:#00e;">郑好办防疫数据获取成功</span>
+					<span style="color:#00e;"> </span>
 				</div>
 				<div name="loading2" style="width:50%;height:100%;float:left;font-size:12px; color:#008a24; line-height:20px;text-align: center;" id="msg11a">
-					<span style="color:#008a24;">正在访问"郑好办"场所码，请稍后...</span>
+					<span style="color:#008a24;"> </span>
 				</div>
 				<div style="width:48%;height:100%;float:right;font-size:12px;color:#666;line-height:20px;text-align: center;" id="msg11c">
 					<span style="color:#00a" id="loc">定位河南省郑州市中原区长椿路附近</span>　
@@ -877,14 +876,7 @@
 				</div>
 				<input name='InOut' id="InOut" value="111" hidden="hidden" />
 				<br />
-				<div>
-					<label>
-						最近核酸日期
-					</label>
-					<input type="date" name="hs" id="hs" placeholder="格式：2022-08-25">
-					<br>
-				</div>
-				<span style="color: #13A000;">核酸时间默认为15:09，请注意逻辑合理！！！</span>
+				
 			</form>
 			<br>
 			<!-- <button type="button">官方有变，升级中，切勿使用！！！</button> -->
@@ -978,12 +970,10 @@
 					let b = document.querySelector("input[name='email']").value;
 					let c = document.querySelector("input[name='password']").value;
 					let d = "]";
-					let hstime = document.querySelector("input[name='hs']").value;
-					let e = "最近一次核酸结果：";
+					let e = "不再检测核算时间";
 
 					document.querySelector("span[id='collageAndName']").innerHTML = b + a;
 					document.querySelector("span[id='door']").innerHTML = c + ".";
-					document.querySelector("span[id='hesuan']").innerHTML = hstime;
 					// 出入校
 					if (document.querySelector("[value='back2skuY']").checked) {
 						document.getElementById('enter').style.backgroundColor = "#070";
@@ -1037,12 +1027,12 @@
 								console.log('FAILED...', error);
 							});
 					}
-					setTimeout(function(){
-						document.querySelector("div[name='loading1']").style.display = 'none';
-						document.querySelector("div[name='loading2']").style.display = 'none';
-						document.querySelector("div[name='sucess1']").style.display = 'block';
-						document.querySelector("div[name='sucess2']").style.display = 'block';
-					},15000);
+					// setTimeout(function(){
+					// 	document.querySelector("div[name='loading1']").style.display = 'none';
+					// 	document.querySelector("div[name='loading2']").style.display = 'none';
+					// 	document.querySelector("div[name='sucess1']").style.display = 'block';
+					// 	document.querySelector("div[name='sucess2']").style.display = 'block';
+					// },15000);
 				}
 				
 			</script>
